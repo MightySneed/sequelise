@@ -1,0 +1,29 @@
+const connection= require("../connection");
+const {DataTypes} = require("sequelize");
+
+
+const Author = connection.define("Author", {
+    authorID : {
+        type : DataTypes.INTEGER, 
+        unique:  true,
+        allowNull: false,
+        primaryKey: true,
+        autoIncrement: true
+    },
+    Surname : {
+        type : DataTypes.STRING,
+        unique: false,
+        allowNull: false
+    },
+    stInitial : {
+        type : DataTypes.STRING,
+        defaultValue: "N/A"
+    },
+    ndInitial : {
+        type : DataTypes.STRING,
+        defaultValue : ""
+    },
+
+})
+
+module.exports = Author;
